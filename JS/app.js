@@ -1,244 +1,164 @@
 'use strict';
 
 
-//var total=0;
+// //var total=0;
 var hours = ['6am ', '7am ', '8am ', '9am ', '10am ', '11am '
   , '12am ', '1pm ', '2pm ', '3pm ', '4pm ', '5pm ', '6pm ', '7pm '];
 
-var Seattle = {
+var locations=['Seattle','Tokyo','Dubai','Paris','Lima'];
 
-  minCustomer: 23, //minimum number of customer per hour
-  maxCustomer: 65, //maximum number of customer per hour
-  avgNum: 6.3, //Avg Cookies per customer
-  numOfCookies: [],
-  totalNum: [],
-  totalCookies: 0,
-  location: 'Seattle',
+var myBranches = [];
+function Branches (minCustomer,maxCustomer,avgNum,location){ // This is my Constructor
+  this.minCustomer = minCustomer; // For minimun number of customer per hour
+  this.maxCustomer = maxCustomer; // For maximum number of customer per hour
+  this.avgNum = avgNum ; // For avg number of cookies per customer
+  //this.branchName = branchName; // For my location for each branch
+  this.location=location;
+  this.numOfCookies = [];
+  this.totalCookies = 0;
+  myBranches.push(this);
 
+}
+////////////////////////////////////////////////
 
-  myNumber: function () {
-    for (var i = 0; i < hours.length; i++) {
-      var myAvg = Math.floor(this.avgNum);
-      this.numOfCookies.push((getRandomCustomer(this.minCustomer, this.maxCustomer)) * myAvg);
-      this.totalCookies = this.totalCookies + this.numOfCookies[i];
-      // this.totalNum.push(this.numOfCookies);
-      // console.log(total);
-    }
-  },
-  myrender: function () { // I will star DOM manipulation,I need to convert the values of the object on creating the html , so i will create an html using javascript and passing the value from object
-    var myContainer = document.getElementById('Salmon-Cookies'); //i get the parent
-    var myArticle = document.createElement('article');
-    myContainer.appendChild(myArticle);
-    //console.log(myContainer);
-    var h2Element = document.createElement('h2'); //Creat h2
-    myArticle.appendChild(h2Element);//my child is h2
-    h2Element.textContent = this.location;
-    var ulElement = document.createElement('ul');
-    myContainer.appendChild(ulElement);
-    for (var i = 0; i < hours.length; i++) {
-      var liElement = document.createElement('li');
-      ulElement.appendChild(liElement);
-      liElement.textContent = `${hours[i]} :${this.numOfCookies[i]} Cookies.`;
-    }
+Branches.prototype.myNumber=function(){ // My method to defines number of cookies for each hour
+  for (var i = 0; i < hours.length; i++) {
+    var myAvg = Math.floor(this.avgNum); // converte from decimal to integer
+    this.numOfCookies.push((getRandomCustomer(this.minCustomer, this.maxCustomer)) * myAvg); // to calculate the number of cookies
+    this.totalCookies = this.totalCookies + this.numOfCookies[i]; //for calculat the total
 
-
-    var totalLi = document.createElement('li');
-
-    totalLi.textContent = 'Total ' + Seattle.totalCookies;
-    ulElement.appendChild(totalLi);
   }
-
-
+  //console.log=this.totalCookies;
 };
-// console.log(Seattle.getmyNum());
-Seattle.myNumber();
-Seattle.myrender();
-// console.log(Seattle);
-// console.log(Seattle.numOfCookies);
-// Seattle.myrender;
 
-//console.log(Seattle);
-//console.table(Seattle);
-//console.log(Seattle.myrender);
-// Seattle.getmyNum();
+/////////////////////////////////////////////////////////
 
-// Seattle.myrender();
-
-
-
-var Tokyo = {
-
-  minCustomer: 3, //minimum number of customer per hour
-  maxCustomer: 24, //maximum number of customer per hour
-  avgNum: 1.2, //Avg Cookies per customer
-  numOfCookies: [],
-  totalCookies: 0,
-  location: 'Tokyo',
-
-  myNumber: function () {
-    for (var i = 0; i < hours.length; i++) {
-      var myAvg = Math.floor(this.avgNum);
-      this.numOfCookies.push((getRandomCustomer(this.minCustomer, this.maxCustomer)) * myAvg);
-      this.totalCookies = this.totalCookies + this.numOfCookies[i];
-    }
-  },
-
-  myrender1: function () { // I will star DOM manipulation,I need to convert the values of the object on creating the html , so i will create an html using javascript and passing the value from object
-    var myContainer = document.getElementById('Salmon-Cookies'); //i get the parent
-    var myArticle = document.createElement('article');
-    myContainer.appendChild(myArticle);
-    //console.log(myContainer);
-    var h2Element = document.createElement('h2'); //Creat h2
-    myArticle.appendChild(h2Element);//my child is h2
-    h2Element.textContent = this.location;
-    var ulElement = document.createElement('ul');
-    myContainer.appendChild(ulElement);
-    for (var k = 0; k < hours.length; k++) {
-      var liElement = document.createElement('li');
-      ulElement.appendChild(liElement);
-      liElement.textContent = `${hours[k]} :${this.numOfCookies[k]} Cookies.`;
-    }
-    var totalLi = document.createElement('li');
-
-    totalLi.textContent = 'Total ' + Seattle.totalCookies;
-    ulElement.appendChild(totalLi);
-  }
-};
-Tokyo.myNumber();
-Tokyo.myrender1();
-
-
-
-
-
-
-var Dubai = {
-
-  minCustomer: 11, //minimum number of customer per hour
-  maxCustomer: 38, //maximum number of customer per hour
-  avgNum: 3.7, //Avg Cookies per customer
-  numOfCookies: [],
-  totalCookies: 0,
-  location: 'Dubai',
-
-  myNumber: function () {
-    for (var i = 0; i < hours.length; i++) {
-      var myAvg = Math.floor(this.avgNum);
-      this.numOfCookies.push((getRandomCustomer(this.minCustomer, this.maxCustomer)) * myAvg);
-    }
-  },
-
-  myrender2: function () { // I will star DOM manipulation,I need to convert the values of the object on creating the html , so i will create an html using javascript and passing the value from object
-    var myContainer = document.getElementById('Salmon-Cookies'); //i get the parent
-    var myArticle = document.createElement('article');
-    myContainer.appendChild(myArticle);
-    //console.log(myContainer);
-    var h2Element = document.createElement('h2'); //Creat h2
-    myArticle.appendChild(h2Element);//my child is h2
-    h2Element.textContent = this.location;
-    var ulElement = document.createElement('ul');
-    myContainer.appendChild(ulElement);
-    for (var k = 0; k < hours.length; k++) {
-      var liElement = document.createElement('li');
-      ulElement.appendChild(liElement);
-      liElement.textContent = `${hours[k]} :${this.numOfCookies[k]}cookies.`;
-    }
-    var totalLi = document.createElement('li');
-
-    totalLi.textContent = 'Total ' + Seattle.totalCookies;
-    ulElement.appendChild(totalLi);
+Branches.prototype.dailyCalcuation = function() {
+  for (var i = 0; i < this.numOfCookies.length; i++) {
+    this.totalCookiesThroughTheDay += this.numOfCookies[i];
+    // console.log(this.totalCookiesThroughTheDay);
   }
 };
 
-Dubai.myNumber();
-Dubai.myrender2();
+//////////////////////////////////////////////////////////
 
-var Paris = {
 
-  minCustomer: 20, //minimum number of customer per hour
-  maxCustomer: 38, //maximum number of customer per hour
-  avgNum: 2.3, //Avg Cookies per customer
-  numOfCookies: [],
-  totalCookies: 0,
-  location: 'paris',
-
-  myNumber: function () {
-    for (var i = 0; i < hours.length; i++) {
-      var myAvg = Math.floor(this.avgNum);
-      this.numOfCookies.push((getRandomCustomer(this.minCustomer, this.maxCustomer)) * myAvg);
-    }
-  },
-
-  myrender3: function () { // I will star DOM manipulation,I need to convert the values of the object on creating the html , so i will create an html using javascript and passing the value from object
-    var myContainer = document.getElementById('Salmon-Cookies'); //i get the parent
-    var myArticle = document.createElement('article');
-    myContainer.appendChild(myArticle);
-    //console.log(myContainer);
-    var h2Element = document.createElement('h2'); //Creat h2
-    myArticle.appendChild(h2Element);//my child is h2
-    h2Element.textContent = this.location;
-    var ulElement = document.createElement('ul');
-    myContainer.appendChild(ulElement);
-    for (var k = 0; k < hours.length; k++) {
-      var liElement = document.createElement('li');
-      ulElement.appendChild(liElement);
-      liElement.textContent = `${hours[k]} :${this.numOfCookies[k]} Cookies.`;
-    }
-    var totalLi = document.createElement('li');
-
-    totalLi.textContent = 'Total ' + Seattle.totalCookies;
-    ulElement.appendChild(totalLi);
+Branches.prototype.locationCalcuation = function() {
+  for (var i = 0; i < this.locations.length; i++) {
+    this.totalCookiesTotalLocations += this.numOfCookies[i];
+    // console.log(this.totalCookiesThroughTheDay);
   }
 };
 
-Paris.myNumber();
-Paris.myrender3();
+//////////////////////////////////////////////////////////
 
-var Lima = {
-
-  minCustomer: 2, //minimum number of customer per hour
-  maxCustomer: 16, //maximum number of customer per hour
-  avgNum: 4.6, //Avg Cookies per customer
-  numOfCookies: [],
-  totalCookies: 0,
-  location: 'Lima',
-
-  myNumber: function () {
-    for (var i = 0; i < hours.length; i++) {
-      var myAvg = Math.floor(this.avgNum);
-      this.numOfCookies.push((getRandomCustomer(this.minCustomer, this.maxCustomer)) * myAvg);
-    }
-  },
-
-  myrender4: function () { // I will star DOM manipulation,I need to convert the values of the object on creating the html , so i will create an html using javascript and passing the value from object
-    var myContainer = document.getElementById('Salmon-Cookies'); //i get the parent
-    var myArticle = document.createElement('article');
-    myContainer.appendChild(myArticle);
-    //console.log(myContainer);
-    var h2Element = document.createElement('h2'); //Creat h2
-    myArticle.appendChild(h2Element);//my child is h2
-    h2Element.textContent = this.location;
-    var ulElement = document.createElement('ul');
-    myContainer.appendChild(ulElement);
-    for (var k = 0; k < hours.length; k++) {
-      var liElement = document.createElement('li');
-      ulElement.appendChild(liElement);
-      liElement.textContent = `${hours[k]} :${this.numOfCookies[k]} Cookies.`;
-    }
-    var totalLi = document.createElement('li');
-
-    totalLi.textContent = 'Total ' + Seattle.totalCookies;
-    ulElement.appendChild(totalLi);
-  }
-};
-
-Lima.myNumber();
-Lima.myrender4();
-
-
+// My helper function
 function getRandomCustomer(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
+
+/////////////////////////////////////////////////////////
+
+var salmonContainer = document.getElementById('Salmon-Cookies');
+Branches.prototype.myHeaderRender=function(){
+
+  //creating my table tag
+  var salmonTable = document.createElement('table');
+  salmonContainer.appendChild(salmonTable);
+  //creating <thead> tag
+  var firstThead = document.createElement('thead');
+  salmonTable.appendChild(firstThead);
+  //creating <tr> tag for header
+  var firstTr = document.createElement('tr');
+  salmonTable.appendChild(firstTr);
+
+  //I tried to creat the empty cell without loop but i couldn't
+  for (var n=0 ;n<=13;n++){
+    var firstTh = document.createElement('th');
+    firstTr.appendChild(firstTh);
+  }
+
+  //This (for loop) list my hours in a row
+  for (var i = 0; i <= hours.length; i++) {
+    firstTh = document.createElement('th');
+    firstTr.appendChild(firstTh);
+    firstTh.textContent = hours[i] ;
+  }
+  // This is for creat another cell in the same row
+  firstTh.textContent='DailyLocationTotal';
+
+};
+//////////////////////////////////////////////////////////////////
+
+Branches.prototype.myBodyRender=function(){
+
+  var salmonbody = document.createElement('tbody');
+  salmonContainer.appendChild(salmonbody);
+  var secondTr = document.createElement('tr');
+  salmonbody.appendChild(secondTr);
+  var secondTh=document.createElement('th');
+  //secondTr.appendChild(secondTh);
+
+  for (var k=0 ; k< myBranches.length;k++){
+    secondTh.textContent=locations[k];
+    secondTr.appendChild(secondTh);
+  }
+
+  for (var j=0 ;j<hours.length ;j++){
+    var firstTd=document.createElement('td');
+    firstTd.textContent= `// ${this.numOfCookies[j]} ` ;
+    secondTr.appendChild(firstTd);
+  }
+  // firstTd.textContent= ` ${this.dailyCalcuation} ` ;
+};
+
+////////////////////////////////////////////////////////////////////
+
+Branches.prototype.myFooterRender = function() {
+
+  var salmonfooter = document.createElement('tfoot');
+  salmonContainer.appendChild(salmonfooter);
+  var finalTr = document.createElement('tr');
+  salmonfooter.appendChild(finalTr);
+  var finalTd = document.createElement('td');
+      finalTd.textContent = (this.totalCookiesTotalLocations);
+      finalTr.appendChild(finalTd);
+    
+  
+};
+
+//////////////////////////////////////////////////////////////////
+// // here are my Objects
+var Seattle = new Branches(23,65 , 6.3, 'Seattle');
+Seattle.myNumber();
+Seattle.myHeaderRender();
+Seattle.myBodyRender();
+
+var Tokyo = new Branches(3, 24 , 1.2 , 'Tokyo');
+Tokyo.myNumber();
+Tokyo.myBodyRender();
+
+var Dubai = new Branches(11, 38 , 3.7 , 'Dubai');
+Dubai.myNumber();
+Dubai.myBodyRender();
+
+var Paris = new Branches(20, 38 , 2.3 , 'Paris');
+Paris.myNumber();
+Paris.myBodyRender();
+
+var Lima = new Branches(2, 16 , 4.6 , 'Lima');
+Lima.myNumber();
+Lima.myBodyRender();
+
+///////////////////////////////////////////////
+
+//  for (var i =0; i< myBranches.length; i++) {
+//   myBranches[i].myNumber();
+//    myBranches[i].myBodyRender();
+//  }
+
+//////////////////////////////////////////
+
 
