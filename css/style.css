@@ -64,8 +64,7 @@ ul {
     border:  1px solid black;
   } */
 
- 
-  table {
+table {
     border-collapse: collapse;
     width: min-content;
     border: 1px solid black;
@@ -142,4 +141,7 @@ input[type=submit] {
     border-radius: 5px;
     padding: 20px;
   }
-
+ 
+  label {
+    margin: 92px;
+}
