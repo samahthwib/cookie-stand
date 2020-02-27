@@ -100,30 +100,20 @@ branchesForm.addEventListener('submit' , function(event){
   var branchLocation = event.target.location.value;
 
 
-
   var newBranch = new Branches(theMinCustomer , theMaxCustomer ,averageNum,branchLocation);
   salmonTable.removeChild(salmonTable.lastChild);
   newBranch.myBodyRender();
-
   // myBranches.push(newBranch);
 
- myFooterRender();
+  myFooterRender();
   //console.log(myBranches);
-  //console.log(newBranch);
-
- 
+  //console.log(newBranch); 
   // newBranch.myBodyRender();
-
-
   //salmonTable.push(myFooterRender);
   //newBranch.myFooterRender();
-  
   //console.log(newBranch);
-
   // var list = document.getElementById('my-table');
   // list.insertBefore(newBranch, list.childNodes[-1]);
-
-
   // salmonTable.appendChild(newRow);
 });
 
