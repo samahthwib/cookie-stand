@@ -107,7 +107,7 @@ branchesForm.addEventListener('submit' , function(event){
 
   // myBranches.push(newBranch);
 
-  // newBranch.myHeaderRender();
+ myFooterRender();
   //console.log(myBranches);
   //console.log(newBranch);
 
