@@ -3,9 +3,10 @@
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script&display=swap);
 
  body{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 251, 254);
   width: 100%;
   height: 1000px;
+  
  }
 
  img.family-image {
@@ -48,6 +49,7 @@
   float: left;
   padding: 8px 16px;
   text-decoration: none;
+  font-size: 194%;
 }
 
 
@@ -63,3 +65,216 @@ h2{
   color: #8a1b4e;
   font-weight: 900;
 }
+
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  margin-top: 3%;
+  float: left;
+  width: 19.33%;
+  padding: 7px;
+  margin-left: 6px;
+}
+
+
+
+p {
+  font-family: 'Dancing Script';
+  text-align: center;
+  padding-top: 3%;
+  font-size: 195%;
+    font-weight: 900;
+    color: #a20f4c;
+}
+
+label {
+  margin: 22%;
+}
+
+form#branches-form {
+  padding: 23%;
+  margin-top: 2%;
+}
+
+legend {
+  display: inline-block;
+  font-size: 226%;
+  text-align: center;
+  padding-bottom: 7%;
+  font-family: 'Caveat';
+  color: rgb(97, 19, 62);
+}
+
+label {
+  font-size: 154%;
+  font-family: monospace;
+  font-weight: 900;
+ 
+}
+
+input[type=submit] {
+  margin-top: 4%;
+  background-color: #af4c73;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  margin-right: 18%;
+}
+
+input[type=submit]:hover {
+  background-color: #e78bb0;
+}
+
+
+input[type=text], select, textarea {
+  width: 19%;
+  padding: 21px;
+  border: 2px solid #752565;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 90%;
+}
+
+input[type=number], select, textarea {
+  width: 19%;
+  padding: 21px;
+  border: 2px solid #752565;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 90%;
+  margin-bottom: 1%;
+}
+
+fieldset {
+  background-color: #fdecf8;
+  padding-bottom: 3%;
+}
+
+.pagination2 {
+  display: inline-block;
+  margin-left: 2%;
+  margin-top: -17%;
+  margin-bottom: 15%;
+}
+
+.pagination2 a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin-bottom: 6%;
+  font-size: 194%;
+}
+
+.pagination2 a:hover:not(.active) {background-color: rgb(236, 207, 225);}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+section#branches {
+  
+  border-top-style: ridge;
+  border-top-width: thick;
+}
+
+h2.htable {
+  font-size: 400%;
+  font-family: 'Caveat';
+  size: 128%;
+  margin-left: 34%;
+  margin-top: 2%;
+  color: #8a1b4e;
+  font-weight: 900;
+  margin-bottom: 3%;
+}
+
+section#my-table {
+  margin-top: -10%;
+  
+}
+
+
+th, td {
+  font-family: monospace;
+    padding: 22px;
+    text-align: left;
+    border: 5px solid #f3b7d2;
+  font-size: 180%;
+  text-align: center;
+
+  }
+
+
+  .pagination3 {
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 1%;
+    margin-bottom: 15%;
+  }
+  
+  .pagination3 a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-bottom: 6%;
+    font-size: 194%;
+  }
+  
+  .pagination3 a:hover:not(.active) {background-color: rgb(236, 207, 225);}
+  
+
+  footer {
+    margin-top: -5%;
+    border-top: black;
+    border-top-style: double;
+  }
+
+  p.p-footer {
+    font-family: 'Dancing Script';
+    text-align: center;
+    padding-top: 3%;
+    font-size: 195%;
+    font-weight: 900;
+    color: #a20f4c;
+    margin-top: -2%;
+}
+
+
+.icon-bar {
+  margin-top: -1.5%;
+    margin-right: 4%;
+    background-color: rgb(255, 255, 255);
+    float: right;
+    clear: right;
+}
+.icon-bar a {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  padding: 13px;
+  background: #a9518e;
+
+}
+
+
+    .icon-bar a:hover {
+      background-color: rgb(240, 198, 227);
+    }

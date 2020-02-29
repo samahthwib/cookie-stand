@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link href="css/style.css" type="text/css" rel="stylesheet" />
     <link rel="icon" href="image/3_July-02-512.png" type="image/icon type">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
         
      </header>
      <main>
-    <section>
+    <section id="Home">
         <h1>Salmon Cookies</h1>
 
         <img class="family-image" src="image/family.jpg" alt="family" height="600px">
@@ -27,22 +28,109 @@
 
 <div class="pagination">
     <a href="#">&laquo;</a>
-    <a href="#">1</a>
-    <a  href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
+    <a href="#Home">1</a>
+    <a  href="#branches">2</a>
+    <a href="#my-table">3</a>
     <a href="#">&raquo;</a>
   </div>
 
-  <section class="branches">
+  <section id="branches">
    <h2>Our Branches</h2>
 
+   <div class="row">
+    <div class="column">
+      <img src="image/seattle.jpg" alt="Snow" style="width: 100%; height: 250px;">
+      <p>Seattle City</p>
+    </div>
+    <div class="column">
+      <img src="image/dubai.jpg" alt="Forest" style="width:100%;height:100%;">
+      <p>Dubai City</p>
+    </div>
+    <div class="column">
+      <img src="image/lima.jpg" alt="Mountains" style="width:100% ;height:250px;">
+      <p>Lima City</p>
+    </div>
+    <div class="column">
+        <img src="image/paris.jpg" alt="Mountains" style="width:100% ;height:250px;">
+        <p>Paris City</p>
+      </div>
+      <div class="column">
+        <img src="image/tokyo.jpeg" alt="Mountains" style="width:100% ;height:250px;">
+        <p>Tokyo City</p>
+      </div>
+
+    <form id="branches-form">
+     <fieldset>
+        <legend>Add new store location:</legend>
+    
+        <label for="minCustomer">Minimum customer number</label>
+        <input type="number" id="minCustomer" placeholder="Enter the minimum customer number">
+              
+        <label for="maxCustomer">Maximum customer number</label>
+        <input type="number" id="maxCustomer" placeholder="Enter the maximum customer number">
+    
+        <label for="avgNum">Average number</label>
+        <input type="number" step="0.01" id="avgNum" placeholder="Enter the average number of cookies per hour">
+              
+        <label for="location">location name</label>
+        <input type="text" id="location" placeholder="Enter location name">
+        <input type="submit">  
+     </fieldset>
+    </form>
+   </div>
+   
+   
+  <div class="pagination2">
+    <a href="#">&laquo;</a>
+    <a href="#Home">1</a>
+    <a  href="#branches">2</a>
+    <a href="#my-table">3</a>
+   
+    <a href="#">&raquo;</a>
+  </div>
+  
+
+  <section id="my-table">
+    <h2 class="htable">Pat's Salmon Cookies Sales Data</h2>
+    <div id="Salmon-Cookies">
+    </div>
+
+    
+
   </section>
+  </section>
+  <div class="pagination3">
+    <a href="#">&laquo;</a>
+    <a href="#Home">1</a>
+    <a  href="#branches">2</a>
+    <a href="#my-table">3</a>
+    
+    <a href="#">&raquo;</a>
+  </div>
+
+  
+    </form>
+  </div>
+  
 </main>
 
-<footer></footer>
+<footer> <p class="p-footer">copy right for Salmon Cookies</p>
+
+  <section class="icon-bar">
+        
+    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+    <a href="#" class="g-plus"><i class="fa fa-google-plus"></i></a> 
+    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+    <a href="#" class="flicker"><i class="fa fa-flickr"></i></a>
+    <a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a> 
+ 
+    </section>
+</footer>
+
+
+
+<script src="JS/app.js"></script>
 </body>
 
 </html>
